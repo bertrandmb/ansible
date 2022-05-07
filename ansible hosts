@@ -1,0 +1,15 @@
+#Host für die Automatisierung
+
+[master-node]
+localhost ansible_connection=local
+
+
+[worker-node]
+k8s-worker-01 ansible_host=192.168.178.67
+k8s-worker-02 ansible_host=192.168.178.75
+
+[k8s:children]
+master-node
+worker-node
+[all:vars]
+ansible_python_interpreter=/usr/bin/python3
