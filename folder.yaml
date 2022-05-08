@@ -3,6 +3,6 @@
   hosts: k8s
   remote_user: root
 
-  task:
+  tasks:
   - name: creating folder
     file: dest=/root/files state=directory
