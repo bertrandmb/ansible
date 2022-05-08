@@ -1,0 +1,14 @@
+---
+- name: create folder server and user details
+  hosts: k8s
+  remote_user: root
+
+
+
+  tasks:
+  - name: creating folder
+    file: dest=/root/demonclient state=directory
+
+
+  -name: copying the file from demo folder to democlient
+   copy: src=/root/demo/test.txt
