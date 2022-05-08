@@ -4,3 +4,4 @@ ansible# ansible k8s -m shell -a "mkdir test"
 ansible k8s -m copy -a "/root/ansible/index.txt dest=/root/test"
 ansible k8s -m apt -a "name=wget state=present" ---> wget install
 ansible# ansible k8s -m service -a "name=httpd state=started" -----> httpd installieren
+ansible k8s -m apt -a "name=python3-pip state=present" ---> python3 install
