@@ -1,0 +1,10 @@
+---
+- hosts: k8s
+  vars:
+    Color: Green
+    Car: Ford
+    Place: DE
+  remote_user: root
+  tasks:
+  - name: Variable tutorial
+    shell: echo " My Car is {{ Car }} and the color of the car is {{ Color }} " > /root/ansiblevariable.txt
