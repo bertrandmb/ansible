@@ -1,0 +1,8 @@
+---
+- name: create folder server and user details
+  hosts: k8s
+  remote_user: root
+
+  task:
+  - name: creating folder
+    file: dest=/root/files state=directory
