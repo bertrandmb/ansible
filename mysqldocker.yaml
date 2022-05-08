@@ -1,0 +1,27 @@
+---
+- name: Runing MYSQL Database as Docker Container using Ansible
+  hosts: master-node
+  remote_user: root
+
+
+
+  vars:
+    db_volume: db_data
+
+
+  tasks:
+
+  - name: Launch mysql database container
+    docker_container:
+      name: db
+      image: latest
+      volume:
+        - "{{db_volume }}:/var/lib/mysql"
+      restart: true
+      env:
+        MYSQL_ROOT_PASSWORD: password
+        MYSQL_DATABASE: test
+        MYSQL_USER: wordpress
+        MYSQL_PASSWORD: wordpress
+      ports:
+         - "3306:3306"
