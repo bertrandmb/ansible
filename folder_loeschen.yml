@@ -1,0 +1,8 @@
+---
+- name: delete folder server and user details
+  hosts: k8s
+  remote_user: root
+
+  tasks:
+  - name: creating folder
+    file: dest=/root/files state=directory
