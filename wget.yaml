@@ -1,0 +1,9 @@
+---
+- name: Server Details
+  hosts: k8s
+  remote_user: root
+
+
+  tasks:
+  - name: Installing wget
+    apt: pkg=wget state=present
