@@ -1,0 +1,11 @@
+---
+- hosts: k8s
+  tasks:
+  - name: Installing Apache on centos
+    shell: name=httpd state=present
+    when: ansible_os_family == "RedHat"
+
+
+  - name: Install Apache on Ubuntu Server
+    apt: name=apache2 state=present
+    when: ansible_os_family == "Debian"
