@@ -1,0 +1,10 @@
+---
+- hosts: k8s
+  tasks:
+  - name: executing sample command
+    shell: uptime
+    register: result
+
+  - name: printing variable
+    debug:
+      msg: "{{result}}"
