@@ -1,0 +1,12 @@
+---
+- hosts: k8s
+  become: yes
+  tasks:
+   - name: Checking the content of folder
+     command: "ls /root/ansible"
+     register: contents
+
+   - name: Display the message
+     debug:
+       msg: "Directory is empty"
+     when: contens.stdout ==""
