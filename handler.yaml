@@ -1,0 +1,13 @@
+---
+- name: This playbook test handlers
+  hosts: k8s
+  tasks:
+    - name: Create testuser
+      user:
+        name: testuser
+        state: present
+        notify user_msg
+  handlers:
+    - name: user_msg
+      debug:
+            msg: "testuser is created successfully"
