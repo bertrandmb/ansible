@@ -6,4 +6,7 @@ ansible k8s -m apt -a "name=wget state=present" ---> wget install
 ansible# ansible k8s -m service -a "name=httpd state=started" -----> httpd installieren
 ansible k8s -m apt -a "name=python3-pip state=present" ---> python3 install
 ansible k8s -m setup
+ansible k8s -m shell -a "ps -eaf | grep http"
+ansible -m setup all | grep ansible_distribution
+
 
