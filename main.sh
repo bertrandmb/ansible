@@ -1,1 +1,1 @@
-echo 'Hallo Ida'
+echo 'Hallo Ida der Tag ist schön'
